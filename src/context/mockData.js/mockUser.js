@@ -19,7 +19,7 @@ export default {
   site_admin: false,
   name: "Madany Diallo",
   company: null,
-  blog: "",
+  blog: "mdial009.github.io",
   location: "Bronx NY",
   email: null,
   hireable: true,
@@ -30,5 +30,5 @@ export default {
   followers: 2,
   following: 3,
   created_at: "2018-01-31T14:22:58Z",
-  updated_at: "2020-08-26T18:03:03Z",
+  updated_at: "2020-08-28T07:35:28Z",
 };
