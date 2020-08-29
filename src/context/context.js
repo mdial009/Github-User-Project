@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import mockUser from "./mockData.js/mockUser";
 import mockRepos from "./mockData.js/mockRepos";
 import mockFollowers from "./mockData.js/mockFollowers";
+import mockFollowing from "./mockData.js/mockFollowing";
+import mockStarred from "./mockData.js/mockStarred";
+
 import axios from "axios";
 
 const rootUrl = "https://api.github.com";
@@ -14,12 +17,16 @@ const GithubProvider = ({ children }) => {
   const [githubUser, setGithubUser] = useState(mockUser);
   const [repos, setRepos] = useState(mockRepos);
   const [followers, setFollowers] = useState(mockFollowers);
+  const [following, setFollowing] = useState(mockFollowing);
+  const [starred, setStarred] = useState(mockStarred);
+
   // request loading
   const [requests, setRequests] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   // error
   const [error, setError] = useState({ show: false, msg: "" });
 
+  // looking for user function
   const searchGithubUser = async (user) => {
     toggleError();
     setIsLoading(true);
@@ -34,15 +41,23 @@ const GithubProvider = ({ children }) => {
       await Promise.allSettled([
         axios(`${rootUrl}/users/${login}/repos?per_page=100`),
         axios(`${followers_url}?per_page=100`),
+        axios(`${rootUrl}/users/${login}/following?per_page=100`),
+        axios(`${rootUrl}/users/${login}/starred?per_page=100`),
       ])
         .then((results) => {
-          const [repos, followers] = results;
+          const [repos, followers, following, starred] = results;
           const status = "fulfilled";
           if (repos.status === status) {
             setRepos(repos.value.data);
           }
           if (followers.status === status) {
             setFollowers(followers.value.data);
+          }
+          if (following.status === status) {
+            setFollowing(following.value.data);
+          }
+          if (starred.status === status) {
+            setStarred(starred.value.data);
           }
         })
         .catch((err) => console.log(err));
@@ -82,6 +97,8 @@ const GithubProvider = ({ children }) => {
         error,
         searchGithubUser,
         isLoading,
+        following,
+        starred,
       }}
     >
       {children}

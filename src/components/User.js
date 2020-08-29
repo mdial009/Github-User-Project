@@ -2,12 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import Followers from "./Followers";
+import Following from "./Following";
+import Starred from "./Starred";
+
 const User = () => {
   return (
     <section className="section">
       <Wrapper>
         <Card></Card>
         <Followers></Followers>
+        <Following />
+        <Starred />
       </Wrapper>
     </section>
   );
