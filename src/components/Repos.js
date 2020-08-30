@@ -23,7 +23,7 @@ const Repos = () => {
     .sort((a, b) => {
       return b.value - a.value;
     })
-    .slice(0, 5);
+    .slice(0, 100);
 
   // most stars per language
   const mostPopular = Object.values(languages)
@@ -33,7 +33,7 @@ const Repos = () => {
     .map((item) => {
       return { ...item, value: item.stars };
     })
-    .slice(0, 5);
+    .slice(0, 100);
 
   // stars, forks
 
@@ -50,8 +50,8 @@ const Repos = () => {
     }
   );
 
-  stars = Object.values(stars).slice(-10).reverse();
-  forks = Object.values(forks).slice(-10).reverse();
+  stars = Object.values(stars).slice(-30).reverse();
+  forks = Object.values(forks).slice(-30).reverse();
 
   return (
     <section className="section">

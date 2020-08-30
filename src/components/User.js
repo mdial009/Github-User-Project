@@ -8,7 +8,7 @@ import Starred from "./Starred";
 const User = () => {
   return (
     <section className="section">
-      <Wrapper>
+      <Wrapper className="section-center">
         <Card></Card>
         <Followers></Followers>
         <Following />

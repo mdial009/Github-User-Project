@@ -26,7 +26,7 @@ const Card = () => {
       </header>
       <p className="bio">{bio}</p>
       <div className="links">
-        <p>   
+        <p>
           <MdBusiness></MdBusiness>
           {company}
         </p>
@@ -34,15 +34,16 @@ const Card = () => {
           <MdLocationOn></MdLocationOn>
           {location || "earth"}
         </p>
-        <a href={"https://${blog}"}>
-          <MdLink></MdLink>blog
+        <a href={`https://${blog}`}>
+          <MdLink></MdLink>
+          {blog}
         </a>
       </div>
     </Wrapper>
   );
 };
 const Wrapper = styled.article`
-  background: var(--clr-white);
+  background: var(--clr-primary-9);
   padding: 1.5rem 2rem;
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
