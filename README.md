@@ -10,7 +10,7 @@ version used - "react-router-dom": "^5.2.0",
 - A <Route path="*"> always matches
 
 ## Gihthub API
-
+Github api to get the github data of users
 - [Root Endpoint](https://api.github.com)
 - [Get User](https://api.github.com/users/wesbos)
 - [Repos](https://api.github.com/users/john-smilga/repos?per_page=100)
@@ -20,15 +20,15 @@ version used - "react-router-dom": "^5.2.0",
   For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
 
 ## Fusion Charts
-
+Fusions charts to make different charts from the data we get from the github api 
 - [Fusion Charts - Main Docs](https://www.fusioncharts.com/)
 - [First React Chart](https://www.fusioncharts.com/dev/getting-started/react/your-first-chart-using-react)
 - [List Of Charts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts)
 - [Themes](https://www.fusioncharts.com/dev/themes/introduction-to-themes)
 
 ## Auth0
-
-- [Auth0 - Main Docs](https://auth0.com/) for authentication and authorization
+Auth0 for authentication and authorization of the application
+- [Auth0 - Main Docs](https://auth0.com/) 
 - [React SDK Docs](https://auth0.com/docs/libraries/auth0-react)
 - [REACT SDK API Docs](https://auth0.github.io/auth0-react/)
 
